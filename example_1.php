@@ -125,4 +125,23 @@
 
 
    // === 1(n) ===
+  $password = "999999999999999999999999999999999999999999999999999999";
+  
+  function guesPassword($password) {
+    $passArr = str_split($password);
+
+    $newPass = [];
+    for ($j = 0; $j < count($passArr); $j++) {
+      for ($k = 0; $k <= 9; $k++) {
+        if ($k == $passArr[$j]) $newPass[] = $k;
+      } 
+    }
+    
+    return $newPass;
+  }
+
+  $passMy = implode(guesPassword($password));
+
+  echo "Заданный пароль   : $password<br/>";
+  echo "Подобранный пароль: $passMy<br/>";
 ?>
