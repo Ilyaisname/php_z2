@@ -144,4 +144,23 @@
 
   echo "Заданный пароль   : $password<br/>";
   echo "Подобранный пароль: $passMy<br/>";
+ // аля рекурсия работает только до 11 цифр
+  $passStr = '000080811';
+    
+      function search($n, $arr) {
+        if ($n == $arr) return $n;
+        else return search($n + 1, $arr);    
+      }
+
+      $a = search(0, $passStr);
+
+      if (strlen($a) < strlen($passStr)) {    
+        $z = strlen($passStr) - strlen($a);   
+        for ($j = 0; $j < $z; $j++) {     
+          $a = 0 . $a; 
+        }   
+      }    
+
+  
+    print($a);
 ?>
